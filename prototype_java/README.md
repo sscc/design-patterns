@@ -26,7 +26,7 @@ What you might do is to define a method in your level1 class that is called *get
         }
     }
 
-But perhaps we think that it should be the Monster class's responsibility to replicate itself so we might define a method in the class Monster called clone() which takes care of that.
+But perhaps we think that it should be the Monster class's responsibility to replicate itself so we might define a method in the class Monster called *clone()* which takes care of that.
 
     class Monster
     {
@@ -61,7 +61,7 @@ And now the level1 class becomes:
 
 
 What we have done here is remove the responsibility to replicate a class from the actor to the class itself. This lowers coupling, since other classes don't need to be concerned with internal workings of the class they are copying, and increases cohesion.
-Now you could say that perhaps in C++ you could have used a copy constructor or in JAVA serializable, and in most cases it would be fine. However explicit clone method signals that this class IS clonable and some one has thought this through (hopefully).
+Now you could say that perhaps in C++ you could have used a copy constructor or in JAVA Object.clone() or serializable, and in most cases it would be fine. However explicit clone method signals that this class IS clonable and some one has thought this through (hopefully).
 Another benefit is that by handing the cloning in the same class you can access private and protected member variables, which otherwise you might have needed to expose to the outside world.
 
 Now lets add a shield to the monster class. Would you rather search your code base and update all copying methods to also copy the shield or would you like to only update the monster clone method?
